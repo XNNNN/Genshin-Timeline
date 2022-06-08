@@ -1,17 +1,18 @@
 <template>
-	<HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+    <div class="main">
+	    <!-- <LineMain/> -->
+        <Countdown/>
+    </div>
 </template>
 
-<style scoped>
-#admin { width: 100%; min-height: 100vh; height: 100vh; }
-.top { height: 20px; }
-
-.main { height: calc(100% - 40px); }
-.main .nav { width: 200px; }
-.main .tabs { width: calc(100% - 200px); }
-</style>
-
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
+import LineMain from '@/components/LineMain.vue'
+import Countdown from '@/components/Countdown.vue'
 
 </script>
+
+<style lang="sass" scoped>
+.main 
+    width: 100%
+    height: 100%
+</style>

@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import { changePackageVersion } from './build/plugins'
 import { readdirSync } from 'fs'
+import WindiCSS from 'vite-plugin-windicss'
 
 /**
  * 获取多入口文件
@@ -34,6 +35,7 @@ export default defineConfig({
     host: process.env.NODE_ENV !== 'production',
   },
   plugins: [
+    WindiCSS(),
     changePackageVersion(),
     vue({
       refTransform: [/src/],

@@ -1,14 +1,5 @@
 <template>
-	<el-config-provider :locale="locale">
-		<div id="nav">
-			<router-link to="/">{{ $t("nav.home") }}</router-link> |
-			<router-link to="/about">{{ $t("nav.about") }}</router-link> |
-			<router-link to="/example">{{ $t("nav.example") }}</router-link> | 
-			<a href="src/pages/test.html" target="_blank">访问多入口</a>
-		</div>
-		<router-view />
-		<div hidden>我知道你肯定会修改这里的^.^</div>
-	</el-config-provider>
+	<router-view />
 </template>
 
 <script setup lang="ts">
