@@ -5,8 +5,10 @@ import store from "./store";
 
 import ElementPlus from "element-plus"
 import { TroisJSVuePlugin } from 'troisjs';
+import * as moment from 'moment';
 // import "element-plus/dist/index.css"
 import 'element-plus/theme-chalk/index.css'
+import 'animate.css/animate.min.css'
 
 import './index.css'
 import 'virtual:windi.css'

@@ -1,30 +1,36 @@
 <template>
-    <div class="countdown_container">
+    <!-- <el-icon :size="40"  @click="test"><Timer /></el-icon> -->
+    <div :class="['countdown_container', 'animated', timeVisible ? 'animate__bounce' : 'animate__pulse']">
         <div class="time_title"></div>
         <div class="year time_card">
-            <el-icon :size="20">
-                <Edit />
-            </el-icon>
-            <div class="time_unit">年</div>
-        </div>
-        <div class="month time_card">
-
-            <div class="time_unit">月</div>
-        </div>
-        <div class="day time_card">
-            <div class="time_unit">日</div>
-        </div>
-        <div class="hour time_card">
-            <div class="time_unit">时</div>
-        </div>
-        <div class="min time_card">
-            <div class="time_unit">分</div>
-        </div>
-        <div class="sec time_card">
-            <div class="time_unit">秒</div>
+            <div class="time_unit">{{time}}</div>
         </div>
     </div>
 </template>
+<script lang="ts">
+import { defineComponent, onMounted, ref } from 'vue'
+import moment from 'moment'
+// 9月28日上午10:00
+export default defineComponent({
+    setup() {
+        const timeVisible = ref(false)
+        const time = ref('')
+        const test = () => {
+            timeVisible.value = !timeVisible.value
+        }
+        const countTime = () => {
+            let x = new moment(new Date())
+            let y = new moment('2020-9-28 10:00')
+            let duration = moment.duration(x.diff(y))
+            time.value = `${duration.years()}年${duration.months()}月${duration.days()}天${duration.hours()}小时${duration.minutes()}分钟`
+            return time
+        }
+        onMounted(countTime)
+        return { timeVisible, time }
+    },
+})
+</script>
+
 <style lang="sass" scoped>
 .countdown_container
     margin: 20px
