@@ -1,11 +1,11 @@
 <template>
     <!-- <el-icon :size="40"  @click="test"><Timer /></el-icon> -->
-    <div :class="['countdown_container', 'animated', timeVisible ? 'animate__bounce' : 'animate__pulse']">
+    <!-- <div :class="['countdown_container', 'animated', timeVisible ? 'animate__bounce' : 'animate__pulse']">
         <div class="time_title"></div>
         <div class="year time_card">
             <div class="time_unit">{{time}}</div>
         </div>
-    </div>
+    </div> -->
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue'

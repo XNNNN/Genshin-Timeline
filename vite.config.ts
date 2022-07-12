@@ -4,6 +4,9 @@ import { resolve } from 'path'
 import { changePackageVersion } from './build/plugins'
 import { readdirSync } from 'fs'
 import WindiCSS from 'vite-plugin-windicss'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 /**
  * 获取多入口文件
@@ -39,6 +42,12 @@ export default defineConfig({
     changePackageVersion(),
     vue({
       refTransform: [/src/],
+    }),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
     }),
   ],
   build: {
